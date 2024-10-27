@@ -4,32 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock paper scissors</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p class="title">Rock Paper Scissors</p>
+    <section class="heading">
+      <div class="title">rock paper scissors</div>
+      
+      <div class="scoreboard">
+        <div class="score-label">score</div>
+        <div class="score">0</div>
+      </div>
+    </section>
 
-    <button class="move-button js-rock-button">
-      <img src="images/rock-emoji.png" alt="" class="move-icon">
-    </button>
+    <section class="container">
+      <div class="result-field">
+        <div class="result-images">
+          <span class="user-result">
+            <img src="img/rock.png" alt="">
+          </span>
+          
+          <span class="cpu-result">
+            <img src="img/rock.png" alt="">
+          </span>
+        </div>
+        <div class="result"></div>
+      </div>
 
-    <button class="move-button js-paper-button">
-      <img src="images/paper-emoji.png" alt="" class="move-icon">
-    </button>
+      <div class="option-images">
+        <span class="option-image">
+          <img src="img/rock.png" alt="">
+          <p>rock</p>
+        </span>
+        
+        <span class="option-image">
+          <img src="img/paper.png" alt="">
+          <p>paper</p>
+        </span>
+        
+        <span class="option-image">
+          <img src="img/scissors.png" alt="">
+          <p>scissors</p>
+        </span>
+      </div>
+    </section>
 
-    <button class="move-button js-scissors-button">
-      <img src="images/scissors-emoji.png" alt="" class="move-icon">
-    </button>
-
-    <p class="js-result result"></p>
-    <p class="js-moves moves"></p>
-    <p class="js-score score"></p>
-
-    <button class="reset-button js-reset-button">Reset Score</button>
-    <button class="auto-play-button js-auto-play-button">Auto Play</button>
-    
-    <p class="js-reset-confirmation"></p>
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts.js" defer></script>
   </body>
 </html>
