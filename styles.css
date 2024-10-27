@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sixtyfour Convergence', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(33, 124, 93);
+}
+
+@media (min-width: 960px),
+(min-height: 540px) {
+  .heading {
+    padding: 1rem 1rem;
+    margin: 4rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border: solid 8px rgb(50, 50, 50);
+    background-color: rgb(39, 83, 67);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .title {
+    margin-inline: 20px;
+    font-size: 1.5rem;
+  }
+
+  .scoreboard {
+    background-color: black;
+    border-radius: 8px;
+    margin-inline: 10px;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score-label {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    user-select: none;
+    padding: 6rem 6rem;
+    border-radius: 14px;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .result-images {
+    display: flex;
+    column-gap: 7rem;
+  }
+
+  .result-images img {
+    width: 200px;
+  }
+
+  .user-result img {
+    transform: rotate(90deg) rotateY(180deg);
+  }
+
+  .cpu-result img {
+    transform: rotate(-90deg);
+  }
+
+  .result {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 3rem;
+    height: 3rem;
+    opacity: 1;
+    transition: opacity .2s;
+  }
+
+  .loading-text {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+
+  .option-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .option-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+
+  .option-image:hover {
+    opacity: 1;
+  }
+
+  .option-image.active {
+    opacity: 1;
+  }
+
+  .option-image img {
+    width: 50px;
+    pointer-events: none;
+  }
+
+  .option-image p {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    pointer-events: none;
+  }
+
+  .container.start .user-result {
+    transform-origin: left;
+    animation: userShake 0.37s infinite;
+  }
+
+  @keyframes userShake {
+    50% {
+      transform: translateY(-50px) rotate(-20deg);
+    }
+  }
+
+  .container.start .cpu-result {
+    transform-origin: right;
+    animation: cpuShake 0.37s infinite;
+  }
+
+  @keyframes cpuShake {
+    50% {
+      transform: translateY(-50px) rotate(20deg);
+    }
+  }
+}
+
+/* quarter size window */
+@media (max-width: 960px),
+(max-height: 540px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .scoreboard {
+    font-size: 0.8rem;
+  }
+
+  .result-images {
+    column-gap: 3rem;
+  }
+
+  .result-images img {
+    width: 120px;
+  }
+
+  .result {
+    font-size: 1rem;
+    margin: 2rem;
+    height: 3rem;
+  }
+
+  .option-image img {
+    width: 40px;
+  }
+}
